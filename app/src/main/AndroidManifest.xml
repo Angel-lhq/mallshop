@@ -26,12 +26,7 @@
         <activity android:name=".ui.own.activities.LoginActivity"/>
         <activity android:name=".ui.shoppingcart.OrderActiivity"/>
         <activity android:name=".ui.own.activities.AddAddressActivity"/>
-        <activity android:name=".ui.own.activities.AddressManagetActivity">
-            <intent-filter>
-                <action android:name="address"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.own.activities.AddressManagetActivity"/>
     </application>
 
 </manifest>

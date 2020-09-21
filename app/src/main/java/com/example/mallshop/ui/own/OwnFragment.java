@@ -99,7 +99,11 @@ public class OwnFragment extends BaseFragment {
             case R.id.tv_love://我的收藏
                 break;
             case R.id.tv_location://地址管理
-                startActivity(new Intent(context, AddressManagetActivity.class));
+//                startActivity(new Intent(context, AddressManagetActivity.class));
+                Intent intent = new Intent();
+                intent.setAction("address");
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                startActivity(intent);
                 break;
             case R.id.tv_help://帮助中心
                 break;
