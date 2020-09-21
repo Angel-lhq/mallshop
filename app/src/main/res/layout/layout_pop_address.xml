@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_400"
+    android:background="@color/color_white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_margin="@dimen/dp_10"
+            android:id="@+id/txt_province"
+            android:textSize="@dimen/sp_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_city"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/sp_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/txt_province"
+            android:layout_marginLeft="@dimen/dp_20"/>
+        <TextView
+            android:id="@+id/txt_area"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/sp_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txt_city"
+            android:layout_marginLeft="@dimen/dp_20"/>
+
+        <TextView
+            android:id="@+id/txt_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完成"
+            android:enabled="false"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@+id/layout_top"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.weigan.loopview.LoopView
+            android:id="@+id/loop_province"
+            android:layout_weight="1"
+            app:awv_isLoop="false"
+            app:awv_itemsVisibleCount="9"
+            app:awv_lineSpace="3"
+            app:awv_textsize="20"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <com.weigan.loopview.LoopView
+            android:id="@+id/loop_city"
+            android:layout_weight="1"
+            app:awv_isLoop="false"
+            app:awv_itemsVisibleCount="9"
+            app:awv_lineSpace="3"
+            app:awv_textsize="20"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <com.weigan.loopview.LoopView
+            android:id="@+id/loop_area"
+            android:layout_weight="1"
+            app:awv_isLoop="false"
+            app:awv_itemsVisibleCount="9"
+            app:awv_lineSpace="3"
+            app:awv_textsize="20"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:padding="@dimen/dp_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_cover"
+        android:scaleType="centerCrop"
+        android:background="#ECE6E6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_150"/>
+    <TextView
+        android:id="@+id/tv_new_name"
+        android:text="商品"
+        app:layout_constraintTop_toBottomOf="@id/img_cover"
+        app:layout_constraintLeft_toLeftOf="@id/img_cover"
+        app:layout_constraintRight_toRightOf="@id/img_cover"
+        android:textSize="@dimen/dp_18"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_new_price"
+        android:text="￥36.00"
+        android:textColor="#F44336"
+        android:textSize="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/tv_new_name"
+        app:layout_constraintLeft_toLeftOf="@id/tv_new_name"
+        app:layout_constraintRight_toRightOf="@id/tv_new_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
