@@ -1,2 +1,3 @@
+include ':address'
 include ':app'
 rootProject.name = "MallShop"
