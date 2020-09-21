@@ -39,6 +39,7 @@ public class AddressManagerActivity extends BaseActivity implements View.OnClick
         rclAddress = findViewById(R.id.rcl_address);
         btnNewAddress = findViewById(R.id.btn_new_address);
         imgBack.setOnClickListener(this);
+        btnNewAddress.setOnClickListener(this);
     }
 
     @Override

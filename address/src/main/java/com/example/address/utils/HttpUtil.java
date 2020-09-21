@@ -17,6 +17,9 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.FormBody;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -31,28 +34,6 @@ public class HttpUtil {
 
     private HttpUtil() {
     }
-
-    private Retrofit getRetrofit(String baseUrl) {
-        return new Retrofit.Builder()
-                .client(getOkHttpClient())
-                .baseUrl(baseUrl)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-    }
-
-    private OkHttpClient getOkHttpClient() {
-        return new OkHttpClient.Builder()
-                .connectTimeout(60, TimeUnit.SECONDS)
-                .addInterceptor(new LogInterceptor())
-                .addInterceptor(new HeaderInterceptor())
-                .addNetworkInterceptor(new NetInterceptor())
-                .readTimeout(10, TimeUnit.SECONDS)
-                .cache(new Cache(new File(Contant.PATH_CACHE),1024*1024*4))
-                .retryOnConnectionFailure(true)
-                .build();
-    }
-
 
     public static HttpUtil getInstance() {
         if (httpUtil == null){
@@ -77,6 +58,28 @@ public class HttpUtil {
         }
         return apiService;
     }
+    private Retrofit getRetrofit(String baseUrl) {
+        return new Retrofit.Builder()
+                .client(getOkHttpClient())
+                .baseUrl(baseUrl)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+    }
+
+    private OkHttpClient getOkHttpClient() {
+        return new OkHttpClient.Builder()
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .addInterceptor(new LogInterceptor())
+                .addInterceptor(new HeaderInterceptor())
+                .addNetworkInterceptor(new NetInterceptor())
+                .readTimeout(10, TimeUnit.SECONDS)
+                .cache(new Cache(new File(Contant.PATH_CACHE),1024*1024*4))
+                .retryOnConnectionFailure(true)
+                .build();
+    }
+
+
 
     /**
      * 日志拦截器

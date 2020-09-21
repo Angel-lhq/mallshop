@@ -66,7 +66,7 @@ public class AddAddressActivity extends BaseActivity<IOwn.IAddressPresenter> imp
 
     @Override
     protected void initData() {
-        presenter.getAddress("region/list?parentId=1");
+//        presenter.getAddress("region/list?parentId=1");
     }
 
     @Override
